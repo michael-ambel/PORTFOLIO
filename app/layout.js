@@ -1,14 +1,11 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import { PathProvider } from "./context/PathContext";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const inter = localFont({
+  src: "./fonts/Inter-VariableFont_opsz,wght.ttf",
+  variable: "--font-inter",
   weight: "100 900",
 });
 
@@ -20,10 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${inter.variable} antialiased bg-bg text-white `}>
+        <PathProvider>
+          <div className="w-full h-screen max-w-[1440px] mx-auto  flex flex-row-reverse justify-between">
+            <Navbar />
+            {children}
+          </div>
+        </PathProvider>
       </body>
     </html>
   );
