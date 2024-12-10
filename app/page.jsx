@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div className="flex h-auto justify-between gap-[30px] ml-[10px] md:ml-[38px] lg:ml-[57px] w-full mr-[10px] md:mr-[100px] lg:mr-[140px] xl:mr-[180px] mt-[50px] md:mt-auto my-auto md:py-[60px] xl:py-[85px]">
+    <div className="flex h-auto justify-between gap-[30px] ml-[10px] md:ml-[38px] lg:ml-[57px] w-full mr-[10px] md:mr-[120px] lg:mr-[140px] xl:mr-[180px] mt-[50px] md:mt-auto my-auto pb-[100px] md:py-[60px] xl:py-[85px]">
       <div className="fixed hidden lg:block top-1/2 transform -translate-y-1/2 mr-[30px]  my-auto">
         <img
           src="/michael.svg"

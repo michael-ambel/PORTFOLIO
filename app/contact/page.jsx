@@ -8,22 +8,51 @@ function Contact() {
     name: "",
     email: "",
     subject: "",
-    body: "",
+    message: "",
   });
+  const [status, setStatus] = useState("SEND");
+  const [error, setError] = useState("");
+  const [sucsuss, setSucsuss] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    // const { name, value } = e.target;
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("SENDING...");
+    setError("");
+    setSucsuss(true);
+
     console.log("Form submitted:", formData);
-    // Add your submission logic here
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const res = await response.json();
+
+      if (response.ok) {
+        setStatus("SENT");
+        setError("");
+        setSucsuss(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setStatus("RETRY");
+        setError(res.message);
+        setSucsuss(false);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("RETRY");
+      setError(error.message);
+    }
   };
 
   return (
-    <div className="flex flex-col ml-[20px] md:ml-[50px] lg:ml-[70px] xl:ml-[77px] w-auto mr-[20px] md:mr-[120px] lg:mr-[180px] xl:mr-[232px] md:py-[35px] lg:py-[55px] xl:py-[85px]">
+    <div className="flex flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] md:py-[35px] lg:py-[55px] xl:py-[85px]">
       <h2 className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]">
         Let’s <span className=" text-main">Connect ...</span>
       </h2>
@@ -117,9 +146,9 @@ function Contact() {
                 <div className="bg-bs w-full rounded-[22px] h-auto px-[20px] py-[14px] flex items-center">
                   <label htmlFor="body" className="w-full">
                     <textarea
-                      id="body"
-                      name="body"
-                      value={formData.body}
+                      id="message"
+                      name="message"
+                      value={formData.message}
                       onChange={handleChange}
                       rows="5"
                       required
@@ -130,12 +159,22 @@ function Contact() {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="h-[52px] w-[140px] text-[18px] rounded-full bg-main text-black font-semibold"
-              >
-                SEND
-              </button>
+              <div className="flex gap-9">
+                <button
+                  type="submit"
+                  className="h-[52px] w-[140px] text-[18px] rounded-full bg-main text-black font-semibold"
+                >
+                  {status}
+                </button>
+                {sucsuss && (
+                  <div className="text-[22px] pt-[12px] align-text-bottom text-green-600">
+                    Your Email Deliverd Sucssfuly!
+                  </div>
+                )}
+                <div className="text-[22px] pt-[12px] text-red-600 w-auto">
+                  {error}
+                </div>
+              </div>
             </form>
           </div>
         </div>
