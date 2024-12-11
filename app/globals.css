@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-cursor-pointer {
+  cursor: url("/cursor.svg"), auto; /* Replace with your custom image path */
+}
+
+body,
+a,
+button {
+  cursor: none !important;
+}
+
+/* Global scrollbar styles */
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}

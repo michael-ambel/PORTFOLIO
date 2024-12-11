@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import { PathProvider } from "./context/PathContext";
+import CustomCursor from "./components/CustomCursor";
 
 const inter = localFont({
   src: "./fonts/Inter-VariableFont_opsz,wght.ttf",
@@ -17,9 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased bg-bg text-white `}>
+      <body
+        className={`${inter.variable} antialiased bg-bg text-white cursor-none`}
+      >
         <PathProvider>
           <div className="w-full h-screen max-w-[1440px] mx-auto  flex flex-row-reverse justify-between">
+            <CustomCursor />
             <Navbar />
             {children}
           </div>

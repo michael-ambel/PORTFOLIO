@@ -1,5 +1,8 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const currentYear = new Date().getFullYear();
 
@@ -35,7 +38,7 @@ function Contact() {
       const res = await response.json();
 
       if (response.ok) {
-        setStatus("SENT");
+        setStatus("SEND");
         setError("");
         setSucsuss(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
@@ -45,47 +48,197 @@ function Contact() {
         setSucsuss(false);
       }
     } catch (error) {
-      console.error("Error:", error);
       setStatus("RETRY");
       setError(error.message);
     }
   };
 
   return (
-    <div className="flex flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] md:py-[35px] lg:py-[55px] xl:py-[85px]">
-      <h2 className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]">
-        Let’s <span className=" text-main">Connect ...</span>
-      </h2>
+    <motion.div
+      className="flex flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] md:py-[35px] lg:py-[55px] xl:py-[85px]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0, duration: 1.5 }}
+    >
+      <motion.h2
+        className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
+        initial={{ x: 500 }}
+        animate={{ x: 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 10,
+          duration: 10,
+          ease: "easeInOut",
+        }}
+      >
+        Let&apos;s <span className=" text-main">Connect ...</span>
+      </motion.h2>
       <div>
         <div className="flex flex-col lg:flex-row justify-between gap-[30px]">
-          <div className=" flex flex-col justify-between md:w-[400px] h-[320px] pb-[20px] md:max-h-[440px]">
-            <div className="h-[60px]">
+          <div className=" flex flex-col justify-between md:w-[400px] h-[360px] pb-[20px] md:h-[380px]">
+            <div className="h-auto">
               <h3 className="text-[24px] font-bold">Addres</h3>
               <p className="text-[16px] font-bold text-fade">
                 St. Michael Church CMC, A.A, Ethiopia
               </p>
             </div>
 
-            <div className="h-[60px]">
+            <div className="h-auto">
               <h3 className="text-[24px] font-bold">Mail Me</h3>
               <p className="text-[16px] font-bold text-fade">
-                michaelambel46@gmail.com
+                contact@michaelambel.dev <br /> michaelambel46@gmail.com
               </p>
             </div>
-            <div className="h-[60px]">
+            <div className="h-auto">
               <h3 className="text-[24px] font-bold">Phone</h3>
               <p className="text-[16px] font-bold text-fade">
                 +251 9 64 60 30 30
               </p>
             </div>
-            <div className="h-[60px]">
-              <h3 className="text-[24px] font-bold">Social Media</h3>
-              <div className="flex justify-between mt-[10px] w-[280px]">
-                <img src="/sm.svg" className="w-[36px] h-[36px]" alt="" />
-                <img src="/sm.svg" className="w-[36px] h-[36px]" alt="" />
-                <img src="/sm.svg" className="w-[36px] h-[36px]" alt="" />
-                <img src="/sm.svg" className="w-[36px] h-[36px]" alt="" />
-                <img src="/sm.svg" className="w-[36px] h-[36px]" alt="" />
+            <div className="h-auto">
+              <h3 className="text-[24px] font-bold">Links</h3>
+              <div className="flex justify-between mt-[12px] w-[340px]">
+                <motion.button
+                  className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+
+                    scale: 1.1,
+                  }}
+                >
+                  <Link
+                    href="https://www.linkedin.com/in/michael-ambel/"
+                    legacyBehavior
+                  >
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="links/linkdin.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className="w-[38px] h-[38px] rounded-full fill-main"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
+
+                <motion.button
+                  className=" flex items-center justify-center w-[36px] h-[36px]  rounded-[10px]"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    scale: 1.1,
+                  }}
+                >
+                  <Link href="https://x.com/michaelambel" legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="links/x.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className="  fill-main"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
+
+                <motion.button
+                  className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    scale: 1.1,
+                  }}
+                >
+                  <Link href="https://github.com/michael-ambel" legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="links/github.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className=" fill-main rounded-full"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
+
+                <motion.button
+                  className="flex items-center justify-center w-[42px] h-[40px] px-[3px] rounded-[10px]"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    scale: 1.1,
+                  }}
+                >
+                  <Link
+                    href="https://www.upwork.com/freelancers/~013c5ba6216c9090ed"
+                    legacyBehavior
+                  >
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="links/upwork.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className="mt-[4px] fill-main"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
+
+                <motion.button
+                  className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    scale: 1.1,
+                  }}
+                >
+                  <Link href="https://dev.to/michael_ambel" legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
+                      <Image
+                        src="links/dev.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className="w-[38px] h-[38px] rounded-full fill fill-main "
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
+
+                <motion.button
+                  className=" flex items-center justify-center w-[38px] h-[38px] p-[4px] rounded-[10px]"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    scale: 1.1,
+                  }}
+                >
+                  <Link
+                    href="https://www.fiverr.com/michaelambel"
+                    legacyBehavior
+                    className="flex items-center justify-center"
+                  >
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center"
+                    >
+                      <Image
+                        src="links/fiverr.svg"
+                        layout="intrinsic"
+                        width={500}
+                        height={500}
+                        className=" fill-main"
+                        alt=""
+                      />
+                    </a>
+                  </Link>
+                </motion.button>
               </div>
             </div>
           </div>
@@ -160,12 +313,15 @@ function Contact() {
               </div>
 
               <div className="flex gap-9">
-                <button
+                <motion.button
                   type="submit"
                   className="h-[52px] w-[140px] text-[18px] rounded-full bg-main text-black font-semibold"
+                  whileHover={{
+                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                  }}
                 >
                   {status}
-                </button>
+                </motion.button>
                 {sucsuss && (
                   <div className="text-[22px] pt-[12px] align-text-bottom text-green-600">
                     Your Email Deliverd Sucssfuly!
@@ -185,7 +341,7 @@ function Contact() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
