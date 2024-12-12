@@ -1,27 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
-const PortfolioBox = ({ img, w, h, name }) => {
+const PortfolioBox = ({
+  img,
+  w,
+  h,
+  name,
+  link,
+  type,
+  description,
+  finished,
+  statustxt,
+}) => {
+  const router = useRouter();
+  const [comingsoon, setCommingSoon] = useState("");
+  const handleClick = () => {
+    if (finished) {
+      window.open(link, "_blank");
+    } else {
+      setCommingSoon(statustxt);
+      setTimeout(() => {
+        setCommingSoon("");
+      }, 3000);
+    }
+  };
+
   return (
     <motion.div
-      className="flex flex-col justify-between w-full bg-bs rounded-[13px]"
-      style={{ height: `${h}px` }}
+      className="relative flex justify-center items-center group xl:w-[494px] h-[180px] md:h-[160px] lg:h-[270px] xl:h-[290px] p-[2px]  bg-main rounded-[13px] overflow-hidden"
       whileHover={{
-        scale: 1.1,
-        boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+        scale: 1.07,
+        boxShadow: "0px 0px 18px rgb(255, 255, 255)",
       }}
       transition={{
         duration: 0.5,
       }}
+      onClick={handleClick}
     >
-      <Image
-        src={`/portfolio/${img}`}
-        layout="intrinsic"
-        width={500}
-        height={500}
-      />
-      <p>{name}</p>
+      <div className="relative w-full h-full">
+        <Image
+          src={`/portfolio/${img}`}
+          layout="fill"
+          objectFit="cover"
+          className="absolute h-full top-0 left-0 rounded-[12px]"
+        />
+      </div>
+
+      {!finished && (
+        <div className="absolute text-[18px] right-0 top-[50px] pr-4   ">
+          <p className="bg-bg text-[14px] text-fade bg-opacity-80 p-2 rounded-full">
+            {comingsoon}
+          </p>
+        </div>
+      )}
+      <div className="absolute hidden text-[15px] w-[340px] px-[10px] py-[7px] rounded-[20px] h-auto bg-bg bg-opacity-80 text-main group-hover:block bottom-4 right-4">
+        <div className="flex gap-6 ">
+          <button className="bg-main text-black px-3 py-2 text-[14px] rounded-full">
+            {name}
+          </button>
+          <p className="mt-2">{type}</p>
+        </div>
+        <p className="text-white text-[13px]">{description}</p>
+      </div>
     </motion.div>
   );
 };

@@ -28,11 +28,11 @@ const Home = () => {
           layout="intrinsic"
           width={500} // This sets the intrinsic width
           height={500} // This sets the intrinsic height
-          className="w:full lg:w-[360px] xl:w-[400px] "
+          className="w:full lg:w-[350px] xl:w-[400px] "
         />
       </div>
 
-      <div className="flex flex-col lg:ml-[400px] xl:ml-[440px] items-start w-full justify-center ">
+      <div className="flex flex-col lg:ml-[380px] xl:ml-[440px] items-start w-full justify-center ">
         <div className="flex mb-[30px] lg:mb-0">
           <div className="hidden md:block lg:hidden mr-[20px]  my-auto">
             <Image
@@ -56,7 +56,7 @@ const Home = () => {
                 />
               </div>
               <div className="flex flex-col lg:flex-row space-y-4 sm:space-y-0">
-                <span className="block lg:inline-block text-fade w-auto font-black text-[22px] mr-4 md:text-[20px] lg:text-[44px] xl:text-[52px]">
+                <span className="block lg:inline-block text-fade w-auto font-black text-[22px] mr-4 md:text-[20px] lg:text-[43px] xl:text-[52px]">
                   <Typewriter
                     options={{
                       strings: ["HI THIS IS"],
@@ -72,7 +72,7 @@ const Home = () => {
                   {startSecondText && (
                     <Typewriter
                       options={{
-                        strings: ["MICHEL"],
+                        strings: ["MICHAEL"],
                         autoStart: true,
                         loop: false, // Prevent the text from looping
                         cursor: "|", // Disable the default cursor
@@ -105,9 +105,10 @@ const Home = () => {
             </motion.p>
           </div>
         </div>
-        <p className="text-[20px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-fade font-semibold mb-[44px] md:mb-[24px] lg:mb-[38px] xl:mb-[58px]">
-          <span className="font-light block">
-            I build web applications that blend
+        <p className="text-[20px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-fade font-bold mb-[44px] md:mb-[24px] lg:mb-[38px] xl:mb-[58px]">
+          <span className="font-normal block">
+            I build web applications that{" "}
+            <span className="text-main font-normal">blend</span>
           </span>
           High-quality, Scalable, User-Centric, Intuitive UI & Performance.
         </p>

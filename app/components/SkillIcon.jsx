@@ -9,7 +9,7 @@ const SkillIcon = ({ icon, text }) => {
       className="flex items-center  justify-center w-[60px] xl:w-[80px] h-[60px] xl:h-[80px] p-[6px] lg:p-[8px]  border-[2px] border-fade rounded-[17px]"
       whileHover={{
         scale: 1.1,
-        boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+        boxShadow: "0px 0px 12px rgb(255, 255, 255)",
       }}
     >
       <Image

@@ -15,27 +15,78 @@ const Portfolio = () => {
         initial={{ x: 500 }}
         animate={{ x: 0 }}
         transition={{
+          duration: 2,
           type: "spring",
           stiffness: 100,
-          damping: 10,
-          duration: 10,
+          damping: 8,
           ease: "easeInOut",
         }}
       >
         PORTFOLIO
       </motion.h2>
       <div className="flex flex-col gap-[36px]">
-        <div className="flex flex-col lg:flex-row justify-between gap-[42px]">
-          <PortfolioBox img={"cinesnap.png"} w={508} h={274} name={""} />
-          <PortfolioBox img={"cinesnap.png"} w={508} h={274} name={""} />
-        </div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-3 pb-[120px] md:pb-[50px] gap-[42px]">
-          <PortfolioBox img={"cinesnap.png"} w={326} h={188} name={""} />
-          <PortfolioBox img={"cinesnap.png"} w={326} h={188} name={""} />
-          <PortfolioBox img={"cinesnap.png"} w={326} h={188} name={""} />
-          <PortfolioBox img={"cinesnap.png"} w={326} h={188} name={""} />
-          <PortfolioBox img={"cinesnap.png"} w={326} h={188} name={""} />
+        <div className=" grid grid-cols-1 md:grid-cols-2 pb-[120px] md:pb-[50px] gap-[42px]">
+          <PortfolioBox
+            img={"ecom.jpg"}
+            w={490}
+            h={280}
+            name={"GrabCart"}
+            link={""}
+            type={"eCommerce website"}
+            description={
+              "An eCommerce platform aiming to offer quality tech products with user-friendly navigation, a secure checkout process, and a seamless shopping experience."
+            }
+            finished={false}
+            statustxt={"Will be available soon"}
+          />
+          <PortfolioBox
+            img={"cinesnap.png"}
+            w={490}
+            h={280}
+            name={"CineSnap"}
+            type={"Movie Database website"}
+            description={
+              "A dynamic movie search app with real-time data, offering users the ability to discover latast and explore movie details."
+            }
+            finished={true}
+            link={"https://cinesnap.vercel.app/"}
+          />
+          <PortfolioBox
+            img={"portfolio.png"}
+            w={490}
+            h={280}
+            name={"Portfolio"}
+            type={"Personal website"}
+            description={
+              "Portfolio website highlighting skills, projects, and a contact page with a seamless messaging feature for easy inquiries and email confirmations."
+            }
+            finished={true}
+            link={"http://localhost:3000/"}
+          />
+          <PortfolioBox
+            img={"lib.png"}
+            w={490}
+            h={280}
+            name={"LibDental"}
+            type={"Dental clinic website"}
+            description={
+              "A responsive dental clinic landing page providing easy access to services and clinic information."
+            }
+            finished={true}
+            link={"https://www.libdental.com/"}
+          />
+          <PortfolioBox
+            img={"eLearning.jpg"}
+            w={490}
+            h={280}
+            name={"corbit-x"}
+            type={"eLearning website"}
+            description={
+              "eLearning platform offering a seamless learning experience, featuring a wide range of courses, user-friendly navigation, and progress tracking tools."
+            }
+            finished={false}
+            statustxt={"Cancleld project"}
+          />
         </div>
       </div>
     </motion.div>

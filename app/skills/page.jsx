@@ -19,7 +19,7 @@ const Skills = () => {
           type: "spring",
           stiffness: 100,
           damping: 10,
-          duration: 10,
+          duration: 8,
           ease: "easeInOut",
         }}
       >

@@ -21,7 +21,7 @@ const Navbar = () => {
       {icons.map((icon) => (
         <motion.div
           key={icon.id}
-          className="flex flex-col md:flex-row items-center w-[40px] md:w-[80px] lg:w-[102px] xl:w-[132px] h-[50px]  md:h-[48px] gap-1 md:gap-3 justify-start align-bottom border-none focus:outline-none group"
+          className="flex flex-col md:flex-row items-center w-[40px] md:w-[80px] lg:w-[102px] xl:w-[132px] h-[50px]  md:h-[48px] gap-1 md:gap-2 justify-start align-bottom border-none focus:outline-none group"
           whileHover={{
             scale: 1.1,
           }}
@@ -57,7 +57,7 @@ const Navbar = () => {
               </svg>
             </Link>
           </motion.button>
-          <span className="hidden group-hover:block group-active:block text-[14px] md:text-[18px] font-medium my-auto text-fade">
+          <span className="hidden group-hover:block group-active:block text-[14px] md:text-[16px] xl:text-[18px] font-medium my-auto text-fade">
             {icon.name}
           </span>
         </motion.div>

@@ -68,7 +68,7 @@ function Contact() {
           type: "spring",
           stiffness: 100,
           damping: 10,
-          duration: 10,
+          duration: 8,
           ease: "easeInOut",
         }}
       >
@@ -102,7 +102,7 @@ function Contact() {
                 <motion.button
                   className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
 
                     scale: 1.1,
                   }}
@@ -127,7 +127,7 @@ function Contact() {
                 <motion.button
                   className=" flex items-center justify-center w-[36px] h-[36px]  rounded-[10px]"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                     scale: 1.1,
                   }}
                 >
@@ -148,7 +148,7 @@ function Contact() {
                 <motion.button
                   className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                     scale: 1.1,
                   }}
                 >
@@ -169,7 +169,7 @@ function Contact() {
                 <motion.button
                   className="flex items-center justify-center w-[42px] h-[40px] px-[3px] rounded-[10px]"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                     scale: 1.1,
                   }}
                 >
@@ -193,7 +193,7 @@ function Contact() {
                 <motion.button
                   className=" flex items-center justify-center w-[38px] h-[38px] rounded-full"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                     scale: 1.1,
                   }}
                 >
@@ -214,7 +214,7 @@ function Contact() {
                 <motion.button
                   className=" flex items-center justify-center w-[38px] h-[38px] p-[4px] rounded-[10px]"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                     scale: 1.1,
                   }}
                 >
@@ -317,7 +317,7 @@ function Contact() {
                   type="submit"
                   className="h-[52px] w-[140px] text-[18px] rounded-full bg-main text-black font-semibold"
                   whileHover={{
-                    boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+                    boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                   }}
                 >
                   {status}
