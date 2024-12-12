@@ -71,7 +71,7 @@ const PortfolioBox = ({
       <div className="lg:hidden mt-[12px] flex gap-6 ">
         <button
           onClick={handleClick}
-          className="bg-main text-black px-3 py-2 text-[14px] rounded-full"
+          className="bg-main text-black px-3 py-2 h-[50px] text-[14px] rounded-full"
         >
           {name}
         </button>
