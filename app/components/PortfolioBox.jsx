@@ -29,43 +29,55 @@ const PortfolioBox = ({
   };
 
   return (
-    <motion.div
-      className="relative flex justify-center items-center group xl:w-[494px] h-[180px] md:h-[160px] lg:h-[270px] xl:h-[290px] p-[2px]  bg-main rounded-[13px] overflow-hidden"
-      whileHover={{
-        scale: 1.07,
-        boxShadow: "0px 0px 18px rgb(255, 255, 255)",
-      }}
-      transition={{
-        duration: 0.5,
-      }}
-      onClick={handleClick}
-    >
-      <div className="relative w-full h-full">
-        <Image
-          src={`/portfolio/${img}`}
-          layout="fill"
-          objectFit="cover"
-          className="absolute h-full top-0 left-0 rounded-[12px]"
-        />
-      </div>
+    <div>
+      <motion.div
+        className="relative flex justify-center items-center group xl:w-[494px] h-[180px] md:h-[160px] lg:h-[270px] xl:h-[290px] p-[2px]  bg-main rounded-[13px] overflow-hidden"
+        whileHover={{
+          scale: 1.07,
+          boxShadow: "0px 0px 18px rgb(255, 255, 255)",
+        }}
+        transition={{
+          duration: 0.5,
+        }}
+        onClick={handleClick}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src={`/portfolio/${img}`}
+            alt="project"
+            layout="fill"
+            objectFit="cover"
+            className="absolute h-full top-0 left-0 rounded-[12px]"
+          />
+        </div>
 
-      {!finished && (
-        <div className="absolute text-[18px] right-0 top-[50px] pr-4   ">
-          <p className="bg-bg text-[14px] text-fade bg-opacity-80 p-2 rounded-full">
-            {comingsoon}
-          </p>
+        {!finished && (
+          <div className="absolute hiddne lg:block text-[18px] right-0 top-[50px] pr-4   ">
+            <p className="bg-bg text-[14px] text-fade bg-opacity-80 p-2 rounded-full">
+              {comingsoon}
+            </p>
+          </div>
+        )}
+        <div className="absolute hidden w-0 h-0 text-[15px] lg:w-[340px] lg:px-[10px] lg:py-[7px] lg:rounded-[20px] lg:h-auto lg:bg-bg bg-opacity-80 text-main group-hover:block bottom-4 right-4">
+          <div className="flex gap-6 ">
+            <button className="bg-main text-black px-3 py-2 text-[14px] rounded-full">
+              {name}
+            </button>
+            <p className="mt-2">{type}</p>
+          </div>
+          <p className="text-white text-[13px]">{description}</p>
         </div>
-      )}
-      <div className="absolute hidden text-[15px] w-[340px] px-[10px] py-[7px] rounded-[20px] h-auto bg-bg bg-opacity-80 text-main group-hover:block bottom-4 right-4">
-        <div className="flex gap-6 ">
-          <button className="bg-main text-black px-3 py-2 text-[14px] rounded-full">
-            {name}
-          </button>
-          <p className="mt-2">{type}</p>
-        </div>
-        <p className="text-white text-[13px]">{description}</p>
+      </motion.div>
+      <div className="lg:hidden mt-[12px] flex gap-6 ">
+        <button
+          onClick={handleClick}
+          className="bg-main text-black px-3 py-2 text-[14px] rounded-full"
+        >
+          {name}
+        </button>
+        <p className="mt-2">{type}</p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

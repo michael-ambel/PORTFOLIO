@@ -38,8 +38,9 @@ const Home = () => {
             <Image
               src="/michael.svg"
               alt="MICHAEL IMG"
-              width={70}
-              height={70}
+              layout="intrinsic"
+              width={500}
+              height={500}
               className=" w-[300px]  "
             />
           </div>
@@ -122,7 +123,7 @@ const Home = () => {
           <div className="flex justify-between items-end mb-[30px] md:mb-0">
             <Image
               src="/idea.svg"
-              alt=""
+              alt="idea"
               layout="intrinsic"
               width={500} // This sets the intrinsic width
               height={500} // This sets the intrinsic height
@@ -136,7 +137,7 @@ const Home = () => {
             </h2>
             <Image
               src="reality.svg"
-              alt=""
+              alt="reality"
               layout="intrinsic"
               width={500} // This sets the intrinsic width
               height={500} // This sets the intrinsic height
