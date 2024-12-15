@@ -26,7 +26,7 @@ function Contact() {
     e.preventDefault();
     setStatus("SENDING...");
     setError("");
-    setSucsuss(true);
+    setSucsuss(false);
 
     console.log("Form submitted:", formData);
     try {
