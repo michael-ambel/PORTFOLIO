@@ -38,7 +38,7 @@ export async function POST(req, res) {
       from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.GMAIL_USER, // Your email address
       subject: `From ${name}, ${subject}`,
-      text: `You received a new form submission:\n\n----\nName: ${name}, Email: ${email}\n\nSubject: ${subject}\n\nMessage:${message}\n\n-----`,
+      text: `You received a new form submission:\n\n-----\nName: ${name}, Email: ${email}\n\nSubject: ${subject}\n\nMessage:${message}\n\n-----`,
     });
 
     return new Response(
