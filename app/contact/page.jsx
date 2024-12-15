@@ -28,7 +28,6 @@ function Contact() {
     setError("");
     setSucsuss(false);
 
-    console.log("Form submitted:", formData);
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
