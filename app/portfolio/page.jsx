@@ -15,10 +15,10 @@ const Portfolio = () => {
         initial={{ x: 500 }}
         animate={{ x: 0 }}
         transition={{
-          duration: 2,
+          duration: 3,
           type: "spring",
           stiffness: 100,
-          damping: 8,
+          damping: 6,
           ease: "easeInOut",
         }}
       >
@@ -27,14 +27,14 @@ const Portfolio = () => {
       <div className="flex flex-col gap-[36px]">
         <div className=" grid grid-cols-1 md:grid-cols-2 pb-[120px] md:pb-[50px] gap-[42px]">
           <PortfolioBox
-            img={"ecom.jpg"}
+            img={"olcart.png"}
             w={490}
             h={280}
-            name={"GrabCart"}
+            name={"olcart"}
             link={""}
             type={"eCommerce website"}
             description={
-              "An eCommerce platform aiming to offer quality tech products with user-friendly navigation, a secure checkout process, and a seamless shopping experience."
+              "An eCommerce platform designed to provide products from various stores and shops, featuring easy navigation, a secure checkout process, and a smooth shopping experience."
             }
             finished={false}
             statustxt={"Will be available soon"}

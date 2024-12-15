@@ -35,10 +35,10 @@ export async function POST(req, res) {
     });
 
     await webMailTransporter.sendMail({
-      from: `"Michael" <${process.env.SMTP_USER}>`,
+      from: `"Contact Form" <${process.env.SMTP_USER}>`,
       to: process.env.GMAIL_USER, // Your email address
-      subject: `Contact from ${name}, ${subject}`,
-      text: `You received a new contact form submission:\n\nName: ${name}, Email: ${email}\n\nSubject: ${subject}\n\nMessage:${message}\n\n---\nReply directly to this email to follow up.`,
+      subject: `From ${name}, ${subject}`,
+      text: `You received a new form submission:\n\n----\nName: ${name}, Email: ${email}\n\nSubject: ${subject}\n\nMessage:${message}\n\n-----`,
     });
 
     return new Response(

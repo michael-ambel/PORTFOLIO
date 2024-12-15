@@ -92,8 +92,8 @@ const Home = () => {
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 100,
-                damping: 10,
+                stiffness: 80,
+                damping: 12,
                 delay: 4,
                 duration: 4,
                 ease: "easeInOut",

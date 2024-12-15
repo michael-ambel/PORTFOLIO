@@ -31,7 +31,7 @@ const PortfolioBox = ({
   return (
     <div>
       <motion.div
-        className="relative flex justify-center items-center group xl:w-[494px] h-[180px] md:h-[160px] lg:h-[270px] xl:h-[290px] p-[2px]  bg-main rounded-[13px] overflow-hidden"
+        className="relative flex justify-center items-center group xl:w-[494px] h-[180px] md:h-[160px] lg:h-[270px] xl:h-[290px]  border-[2px] border-white rounded-[13px] overflow-hidden"
         whileHover={{
           scale: 1.07,
           boxShadow: "0px 0px 18px rgb(255, 255, 255)",
@@ -47,7 +47,7 @@ const PortfolioBox = ({
             alt="project"
             layout="fill"
             objectFit="cover"
-            className="absolute h-full top-0 left-0 rounded-[12px]"
+            className="absolute h-full top-0 left-0 rounded-[11px]"
           />
         </div>
 

@@ -16,10 +16,11 @@ const Skills = () => {
         initial={{ x: 500 }}
         animate={{ x: 0 }}
         transition={{
+          duration: 3,
           type: "spring",
           stiffness: 100,
-          damping: 10,
-          duration: 8,
+          damping: 6,
+
           ease: "easeInOut",
         }}
       >
