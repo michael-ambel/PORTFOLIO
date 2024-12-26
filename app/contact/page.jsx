@@ -59,21 +59,38 @@ function Contact() {
       animate={{ opacity: 1 }}
       transition={{ delay: 0, duration: 1.5 }}
     >
-      <motion.h2
-        className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
-        initial={{ x: 500 }}
-        animate={{ x: 0 }}
-        transition={{
-          duration: 3,
-          type: "spring",
-          stiffness: 100,
-          damping: 6,
+      <div className="flex">
+        <motion.h2
+          className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 100,
+            damping: 30,
 
-          ease: "easeInOut",
-        }}
-      >
-        Let&apos;s <span className=" text-main">Connect ...</span>
-      </motion.h2>
+            ease: "easeInOut",
+          }}
+        >
+          Let&apos;s
+        </motion.h2>
+        <motion.h2
+          initial={{ x: 400 }}
+          animate={{ x: 0 }}
+          transition={{
+            duration: 3,
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+
+            ease: "easeInOut",
+          }}
+          className=" text-main text-[40px] indent-[16px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
+        >
+          Connect ...
+        </motion.h2>
+      </div>
       <div>
         <div className="flex flex-col lg:flex-row justify-between gap-[30px]">
           <div className=" flex flex-col justify-between md:w-[400px] h-[360px] pb-[20px] md:h-[380px]">
@@ -315,7 +332,7 @@ function Contact() {
               <div className="flex gap-9">
                 <motion.button
                   type="submit"
-                  className="h-[52px] w-[140px] text-[18px] rounded-full bg-main text-black font-semibold"
+                  className="h-[48px] w-[120px] text-[18px] rounded-full bg-main text-black font-semibold"
                   whileHover={{
                     boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                   }}
