@@ -17,7 +17,7 @@ const Navbar = () => {
   const icons = [homeSvg, skillsSvg, portfolioSvg, contactSvg];
 
   return (
-    <div className="fixed bottom-0 left-0 md:top-1/2 md:left-auto md:transform md:-translate-y-1/2 md:mr-[0px] md:ml-auto h-[80px] md:h-[240px] lg:h-[342px] w-full md:w-[110px] xl:w-[132px] flex md:flex-col items-start py-[10px] px-[20px] md:p-0 justify-between bg-bg">
+    <div className="fixed z-50  bottom-0 left-0 md:top-1/2 md:left-auto md:transform md:-translate-y-1/2 md:mr-[0px] md:ml-auto h-[80px] md:h-[240px] lg:h-[342px] w-full md:w-[110px] xl:w-[132px] flex md:flex-col items-start py-[10px] px-[20px] md:p-0 justify-between bg-bg">
       {icons.map((icon) => (
         <motion.div
           key={icon.id}

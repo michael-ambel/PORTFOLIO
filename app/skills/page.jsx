@@ -13,8 +13,8 @@ const Skills = () => {
     >
       <motion.h2
         className="text-[40px] lg:text-[50px] xl:text-[64px] font-black text-main mb-[26px] lg:mb-[40px]"
-        initial={{ x: 500 }}
-        animate={{ x: 0 }}
+        initial={{ y: -400 }}
+        animate={{ y: 0 }}
         transition={{
           duration: 3,
           type: "spring",

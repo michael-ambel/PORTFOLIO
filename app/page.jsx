@@ -87,13 +87,13 @@ const Home = () => {
             </div>
 
             <motion.p
-              className="text-[30px] md:text-[24px] lg:text-[28px]  xl:text-[32px] font-black mb-[20px] md:mb-[20px] lg:mb-[38px]  xl:mb-[58px]"
+              className="text-[30px] md:text-[24px] lg:text-[28px] mt-[10px]  xl:text-[32px] font-black mb-[20px] md:mb-[20px] lg:mb-[30px]  xl:mb-[50px]"
               initial={{ y: -500 }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 80,
-                damping: 12,
+                stiffness: 120,
+                damping: 4,
                 delay: 4,
                 duration: 4,
                 ease: "easeInOut",
