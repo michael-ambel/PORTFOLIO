@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Portfolio = () => {
   return (
     <motion.div
-      className="flex flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full  md:py-[35px] mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] lg:py-[55px] xl:py-[85px]"
+      className="flex z-20 flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full  md:py-[35px] mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] lg:py-[55px] xl:py-[85px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0, duration: 1.5 }}

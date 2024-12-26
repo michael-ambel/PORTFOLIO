@@ -53,32 +53,32 @@ const Home = () => {
                   layout="intrinsic"
                   width={500} // This sets the intrinsic width
                   height={500} // This sets the intrinsic height
-                  className=" w-[164px]  "
+                  className=" w-[190px]  "
                 />
               </div>
               <div className="flex flex-col lg:flex-row space-y-4 sm:space-y-0">
-                <span className="block lg:inline-block text-fade w-auto font-black text-[22px] mr-4 md:text-[20px] lg:text-[43px] xl:text-[52px]">
+                <span className="block lg:inline-block text-white w-auto font-black text-[22px] mr-4 md:text-[20px] lg:text-[43px] xl:text-[52px]">
                   <Typewriter
                     options={{
-                      strings: ["HI THIS IS"],
+                      strings: ["Hi THIS IS"],
                       autoStart: true,
-                      loop: false, // Prevent the text from looping
-                      cursor: "", // Disable the default cursor
-                      typeSpeed: 50, // Speed of typing
-                      deleteSpeed: 10000000, // Don't delete the text after typing
+                      loop: false,
+                      cursor: "",
+                      typeSpeed: 50,
+                      deleteSpeed: 10000000,
                     }}
                   />
                 </span>
-                <span className="font-black block lg:inline-block lg:mb-0  md:flex  text-main text-[48px] md:text-[44px] lg:text-[44px] xl:text-[52px]">
+                <span className="font-black block lg:inline-block lg:mb-0  md:flex  text-main text-[42px] md:text-[44px] lg:text-[44px] xl:text-[52px]">
                   {startSecondText && (
                     <Typewriter
                       options={{
                         strings: ["MICHAEL"],
                         autoStart: true,
-                        loop: false, // Prevent the text from looping
-                        cursor: "|", // Disable the default cursor
-                        typeSpeed: 50, // Speed of typing
-                        deleteSpeed: 10000000, // Don't delete the text after typing
+                        loop: false,
+                        cursor: "|",
+                        typeSpeed: 50,
+                        deleteSpeed: 10000000,
                       }}
                     />
                   )}
@@ -87,12 +87,12 @@ const Home = () => {
             </div>
 
             <motion.p
-              className="text-[30px] md:text-[24px] lg:text-[28px] mt-[10px]  xl:text-[32px] font-black mb-[20px] md:mb-[20px] lg:mb-[30px]  xl:mb-[50px]"
+              className="text-[26px] md:text-[24px] lg:text-[28px] mt-[20px]  xl:text-[32px] font-black mb-[10px] md:mb-[20px] lg:mb-[30px]  xl:mb-[50px]"
               initial={{ y: -500 }}
               animate={{ y: 0 }}
               transition={{
                 type: "spring",
-                stiffness: 120,
+                stiffness: 60,
                 damping: 4,
                 delay: 4,
                 duration: 4,
@@ -106,7 +106,7 @@ const Home = () => {
             </motion.p>
           </div>
         </div>
-        <p className="text-[20px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-fade font-bold mb-[44px] md:mb-[24px] lg:mb-[38px] xl:mb-[58px]">
+        <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-fade font-semibold mb-[44px] md:mb-[24px] lg:mb-[38px] xl:mb-[58px]">
           <span className="font-normal block">
             I build web applications that{" "}
             <span className="text-main font-normal">blend</span>
