@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 
 const PortfolioBox = ({
   img,
-  w,
-  h,
   name,
   link,
   type,
@@ -58,24 +56,24 @@ const PortfolioBox = ({
             </p>
           </div>
         )}
-        <div className="absolute hidden w-0 h-0 text-[15px] lg:w-[340px] lg:px-[10px] lg:py-[7px] lg:rounded-[20px] lg:h-auto lg:bg-bg bg-opacity-80 text-main group-hover:block bottom-4 right-4">
-          <div className="flex gap-6 ">
-            <button className="bg-main text-black px-3 py-2 text-[14px] rounded-full">
+        <div className="absolute hidden w-0 h-0 text-[15px] lg:w-[340px] lg:px-[10px] lg:py-[10px] lg:rounded-[20px] lg:h-auto lg:bg-bg bg-opacity-80 text-main group-hover:block bottom-4 right-4">
+          <div className="flex items-center gap-6 mb-[8px]">
+            <button className="bg-main w-[100px] h-[40px] text-black   text-[14px] rounded-full">
               {name}
             </button>
-            <p className="mt-2">{type}</p>
+            <p className="">{type}</p>
           </div>
           <p className="text-white text-[13px]">{description}</p>
         </div>
       </motion.div>
-      <div className="lg:hidden mt-[12px] flex gap-6 ">
+      <div className="lg:hidden mt-[12px] flex items-center gap-6 ">
         <button
           onClick={handleClick}
-          className="bg-main text-black px-3 py-2 h-[50px] text-[14px] rounded-full"
+          className="bg-main w-[100px] h-[40px] text-black  text-[14px] rounded-full"
         >
           {name}
         </button>
-        <p className="mt-2">{type}</p>
+        <p className="">{type}</p>
       </div>
     </div>
   );

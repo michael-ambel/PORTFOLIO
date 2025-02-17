@@ -13,6 +13,9 @@ module.exports = {
         fade: "#737373",
         main: "#FFB912",
       },
+      backdropBlur: {
+        xs: "2px",
+      },
       screens: {
         sm: "0px", // Mobile devices (default)
         md: "640px", // Large phones and tablets

@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <motion.div
-      className="flex h-auto justify-between gap-[30px] ml-[10px] md:ml-[38px] lg:ml-[57px] w-full mr-[10px] md:mr-[120px] lg:mr-[140px] xl:mr-[180px] mt-[50px] md:mt-auto my-auto pb-[100px] md:py-[60px] xl:py-[85px]"
+      className="flex h-auto justify-between gap-[30px] pl-[10px] md:pl-[38px] lg:pl-[57px] w-full pr-[10px] md:pr-[120px] lg:pr-[140px] xl:pr-[180px] mt-[50px] md:mt-auto my-auto pb-[100px] md:py-[60px] xl:py-[85px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0, duration: 1.5 }}
@@ -25,20 +25,18 @@ const Home = () => {
         <Image
           src="/michael.svg"
           alt="MICHAEL IMG"
-          layout="intrinsic"
           width={500} // This sets the intrinsic width
           height={500} // This sets the intrinsic height
           className="w:full lg:w-[350px] xl:w-[400px] "
         />
       </div>
 
-      <div className="flex flex-col lg:ml-[380px] xl:ml-[440px] items-start w-full justify-center ">
+      <div className="flex flex-col xl:pt-[26px] lg:ml-[380px] xl:ml-[440px] items-start w-full py-[25px] justify-center ">
         <div className="flex mb-[30px] lg:mb-0">
           <div className="hidden md:block lg:hidden mr-[20px]  my-auto">
             <Image
               src="/michael.svg"
               alt="MICHAEL IMG"
-              layout="intrinsic"
               width={500}
               height={500}
               className=" w-[300px]  "
@@ -50,7 +48,6 @@ const Home = () => {
                 <Image
                   src="/michael.svg"
                   alt="MICHAEL IMG"
-                  layout="intrinsic"
                   width={500} // This sets the intrinsic width
                   height={500} // This sets the intrinsic height
                   className=" w-[190px]  "
@@ -109,7 +106,7 @@ const Home = () => {
         <p className="text-[18px] md:text-[18px] lg:text-[20px] xl:text-[24px] text-fade font-semibold mb-[44px] md:mb-[24px] lg:mb-[38px] xl:mb-[58px]">
           <span className="font-normal block">
             I build web applications that{" "}
-            <span className="text-main font-normal">blend</span>
+            <span className="text-main font-bold">blend</span>
           </span>
           High-quality, Scalable, User-Centric, Intuitive UI & Performance.
         </p>
@@ -124,7 +121,6 @@ const Home = () => {
             <Image
               src="/idea.svg"
               alt="idea"
-              layout="intrinsic"
               width={500} // This sets the intrinsic width
               height={500} // This sets the intrinsic height
               className="w-[70px] lg:w-[85px] xl:w-[100px]"
@@ -138,7 +134,6 @@ const Home = () => {
             <Image
               src="reality.svg"
               alt="reality"
-              layout="intrinsic"
               width={500} // This sets the intrinsic width
               height={500} // This sets the intrinsic height
               className="w-[70px] lg:w-[85px] xl:w-[100px]"

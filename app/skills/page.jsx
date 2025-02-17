@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 const Skills = () => {
   return (
     <motion.div
-      className="flex flex-col md:ml-[50px] ml-[20px] lg:ml-[70px] xl:ml-[77px] w-full md:mr-[150px] mr-[20px] lg:mr-[180px] xl:mr-[232px] py-[25px] md:py-[35px] lg:py-[55px] xl:py-[85px]"
+      className="flex flex-col md:pl-[50px] pl-[20px] lg:pl-[70px] xl:pl-[77px] w-full md:pr-[150px] pr-[20px] lg:pr-[180px] xl:pr-[232px] py-[35px] xl:py-[50px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0, duration: 1 }}
     >
       <motion.h2
         className="text-[40px] lg:text-[50px] xl:text-[64px] font-black text-main mb-[26px] lg:mb-[40px]"
-        initial={{ y: -400 }}
-        animate={{ y: 0 }}
+        initial={{ x: -400, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{
           duration: 3,
           type: "spring",
           stiffness: 100,
           damping: 6,
-
+          delay: 1,
           ease: "easeInOut",
         }}
       >

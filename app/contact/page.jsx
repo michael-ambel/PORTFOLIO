@@ -54,7 +54,7 @@ function Contact() {
 
   return (
     <motion.div
-      className="flex flex-col ml-[20px] md:ml-[40px] lg:ml-[70px] xl:ml-[77px] w-full mr-[20px] md:mr-[160px] lg:mr-[180px] xl:mr-[232px] md:py-[35px] lg:py-[55px] xl:py-[85px]"
+      className="flex flex-col pl-[20px] md:pl-[40px] lg:pl-[70px] xl:pl-[77px] w-full pr-[20px] md:pr-[160px] lg:pr-[180px] xl:pr-[232px] py-[35px] xl:py-[50px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0, duration: 1.5 }}
@@ -62,28 +62,28 @@ function Contact() {
       <div className="flex">
         <motion.h2
           className="text-[40px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
-          initial={{ x: -100 }}
-          animate={{ x: 0 }}
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             duration: 3,
             type: "spring",
             stiffness: 100,
             damping: 30,
-
+            delay: 1,
             ease: "easeInOut",
           }}
         >
           Let&apos;s
         </motion.h2>
         <motion.h2
-          initial={{ x: 400 }}
-          animate={{ x: 0 }}
+          initial={{ x: 400, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{
             duration: 3,
             type: "spring",
             stiffness: 100,
             damping: 20,
-
+            delay: 1,
             ease: "easeInOut",
           }}
           className=" text-main text-[40px] indent-[16px] lg:text-[50px] xl:text-[64px] font-black mb-[20px] lg:mb-[60px] xl:mb-[120px]"
@@ -95,7 +95,7 @@ function Contact() {
         <div className="flex flex-col lg:flex-row justify-between gap-[30px]">
           <div className=" flex flex-col justify-between md:w-[400px] h-[360px] pb-[20px] md:h-[380px]">
             <div className="h-auto">
-              <h3 className="text-[24px] font-bold">Addres</h3>
+              <h3 className="text-[24px] font-bold">Address</h3>
               <p className="text-[16px] font-bold text-fade">
                 St. Michael Church CMC, A.A, Ethiopia
               </p>
@@ -131,7 +131,6 @@ function Contact() {
                     <a target="_blank" rel="noopener noreferrer">
                       <Image
                         src="links/linkdin.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className="w-[38px] h-[38px] rounded-full fill-main"
@@ -152,7 +151,6 @@ function Contact() {
                     <a target="_blank" rel="noopener noreferrer">
                       <Image
                         src="links/x.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className="  fill-main"
@@ -173,7 +171,6 @@ function Contact() {
                     <a target="_blank" rel="noopener noreferrer">
                       <Image
                         src="links/github.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className=" fill-main rounded-full"
@@ -197,7 +194,6 @@ function Contact() {
                     <a target="_blank" rel="noopener noreferrer">
                       <Image
                         src="links/upwork.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className="mt-[4px] fill-main"
@@ -218,7 +214,6 @@ function Contact() {
                     <a target="_blank" rel="noopener noreferrer">
                       <Image
                         src="links/dev.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className="w-[38px] h-[38px] rounded-full fill fill-main "
@@ -247,7 +242,6 @@ function Contact() {
                     >
                       <Image
                         src="links/fiverr.svg"
-                        layout="intrinsic"
                         width={500}
                         height={500}
                         className=" fill-main"
@@ -263,10 +257,10 @@ function Contact() {
           <div className="flex-1 h-full">
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col h-full gap-[30px] text-main text-[18px]"
+              className="flex flex-col h-full gap-[18px] text-main"
             >
-              <div className="flex flex-col md:flex-row gap-[22px]">
-                <div className="flex items-center bg-bs md:w-1/2 h-[52px] rounded-[22px] px-[20px] py-[14px]">
+              <div className="flex flex-col md:flex-row gap-[18px]">
+                <div className="flex items-center bg-bs md:w-1/2 h-[44px] rounded-[12px] px-[20px] py-[14px]">
                   <label htmlFor="name" className="w-full">
                     <input
                       type="text"
@@ -281,7 +275,7 @@ function Contact() {
                   </label>
                 </div>
 
-                <div className="flex flex-row items-center bg-bs md:w-1/2 h-[53px] rounded-[22px] px-[20px] py-[14px]">
+                <div className="flex items-center bg-bs md:w-1/2 h-[44px] rounded-[12px] px-[20px] py-[14px]">
                   <label htmlFor="email" className="w-full">
                     <input
                       type="email"
@@ -297,8 +291,8 @@ function Contact() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-[30px]">
-                <div className="bg-bs w-full h-[52px] rounded-[22px] px-[20px] py-[14px] flex items-center">
+              <div className="flex flex-col gap-[18px]">
+                <div className="bg-bs w-full h-[44px] rounded-[12px] px-[20px] py-[14px] flex items-center">
                   <label htmlFor="subject" className=" w-full">
                     <input
                       type="text"
@@ -313,7 +307,7 @@ function Contact() {
                   </label>
                 </div>
 
-                <div className="bg-bs w-full rounded-[22px] h-auto px-[20px] py-[14px] flex items-center">
+                <div className="bg-bs w-full rounded-[12px] h-auto px-[20px] py-[14px] flex items-center">
                   <label htmlFor="body" className="w-full">
                     <textarea
                       id="message"
@@ -322,7 +316,7 @@ function Contact() {
                       onChange={handleChange}
                       rows="5"
                       required
-                      className="bg-bs text-main w-full min-h-[194px] outline-none "
+                      className="bg-bs text-main w-full min-h-[136px] outline-none "
                       placeholder="Message"
                     ></textarea>
                   </label>
@@ -332,7 +326,7 @@ function Contact() {
               <div className="flex gap-9">
                 <motion.button
                   type="submit"
-                  className="h-[48px] w-[120px] text-[18px] rounded-full bg-main text-black font-semibold"
+                  className="h-[44px] w-[120px] text-[16px] rounded-full bg-main text-black font-semibold"
                   whileHover={{
                     boxShadow: "0px 0px 12px rgb(255, 255, 255)",
                   }}
